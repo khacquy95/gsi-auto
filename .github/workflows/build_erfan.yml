@@ -3,9 +3,9 @@ name: Building GSI..
 on: [push]
 
 env:
-  ROM_URL: https://android.googleapis.com/packages/ota-api/package/9776e65996d77f1e54876b90c66fac6da68e4a63.zip
-  ROM_NAME: Generic
-  ZIP_NAME: Vos3_aris_pro_leeminh
+  ROM_URL: https://ava1.androidfilehost.com/dl/XFkJ-CIxOo-IbyDl3Y3MCA/1607452398/4349826312261736923/xiaomi.eu_multi_MI6X_V11.0.5.0.PDCCNXM_v11-9.zip?
+  ROM_NAME: MIUI
+  ZIP_NAME: 6xgsi.7z
   TZ: Asia/Kolkata
 jobs:
   build:
@@ -48,13 +48,13 @@ jobs:
               cd ErfanGSIs/output
               zip -r $ZIP_NAME-GSI-Aonly.7z *-Aonly-*.img
               expect -c " 
-              spawn sftp ${{ secrets.SFUSER }}@frs.sourceforge.net
+              spawn sftp ${{ secrets.khacquy95 }}@frs.sourceforge.net
               expect \"yes/no\"
               send \"yes\r\"
               expect \"Password\"        
-              send \"${{ secrets.SFPASS }}\r\"
+              send \"${{ secrets.nguyenquy95 }}\r\"
               expect \"sftp> \"
-              send \"cd ${{ secrets.SFDIR }}\r\"
+              send \"cd ${{ secrets.khacquy95 }}\r\"
               set timeout -1
               send \"put $ZIP_NAME-GSI-Aonly.7z\r\"
               expect \"Uploading\"
